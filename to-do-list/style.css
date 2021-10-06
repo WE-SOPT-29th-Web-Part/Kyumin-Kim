@@ -1,0 +1,92 @@
+@import "reset.css";
+
+.header {
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: coral;
+    color:white;
+    font-size: 20px;
+}
+
+.options {
+    width:100vw;
+    display:flex;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.options__btn {
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+    color:white;
+}
+
+body {
+    height:100vh;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todos {
+    padding: 10px;
+    width:100vw;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.todos__today {
+    border: 5px solid khaki;
+    width: 600px;
+    height: 500px;
+    padding: 20px 20px;
+}
+
+.todos__header {
+    padding:15px;
+    display:flex;
+    justify-content: center;
+    font-size: 30px;
+    font-style: inherit;
+}
+
+.todos__items {
+    padding: 20px 20px;
+    height:350px;
+}
+
+.todos__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+button {
+    cursor:pointer;
+}
+
+.footer{
+    color:white;
+    background-color: thistle;
+    height: 50px;
+    line-height:50px;
+    text-align: center;
+    width: 100vw;
+}
+
+.todos__add {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 35px;
+}
+
+.todos__add-btn {
+    border:none;
+    border-radius: 50%;
+    background-color: cadetblue;
+}
