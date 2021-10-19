@@ -87,18 +87,21 @@ body {
 .nav__date {
     position: absolute;
     right: 0px;
-    top: 100%;
+    top: 100%; 
+    /* 부모의 높이만큼 내려와서 시작하게 됨 */
     margin-top: 10px;
     background-color: white;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
+    z-index:2;
+    visibility:hidden;
 }
 
-.nav__date div:hover {
+.nav__date-list:hover {
     background-color: #F8F9FA;
     color:green;
 }
 
-.nav__date div {
+.nav__date-list {
     width: 180px;
     height: 40px;
     display: flex;
@@ -107,6 +110,10 @@ body {
     font-size: 14px;
     font-weight: 700;
     border-bottom: 2px solid #F6F7F8;
+}
+
+.nav__date-list.active {
+    color:red;
 }
 
 .post {
