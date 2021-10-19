@@ -1,5 +1,11 @@
-@import "reset.css";
-
+body {
+    margin: 0;
+    height:100%;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .header {
     width: 100vw;
     display:flex;
@@ -24,28 +30,31 @@
     color:white;
 }
 
-body {
-    height:100vh;
-    background-color: beige;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .todos {
     padding: 10px;
+    margin-bottom: 20px;
     width:100vw;
     display:flex;
     justify-content: space-evenly;
 }
 
-.todos__today {
+.todos__today,
+.todos__tommorow {
     border: 5px solid khaki;
-    width: 600px;
-    height: 500px;
-    padding: 20px 20px;
+    width: 0; 
+    height: 100%;
+    position: relative;
+    visibility: hidden;
+    transition: all 700ms ease-in-out;
+    /* width와 visibility 두 요소를 모두 적용시키기 때문에 all 을 이용 */
 }
 
+.todos__today.open,
+.todos__tommorow.open {
+    width:100%;
+    visibility:visible;
+}
 .todos__header {
     padding:15px;
     display:flex;
@@ -56,7 +65,6 @@ body {
 
 .todos__items {
     padding: 20px 20px;
-    height:350px;
 }
 
 .todos__item {
@@ -70,23 +78,23 @@ button {
     cursor:pointer;
 }
 
-.footer{
-    color:white;
-    background-color: thistle;
-    height: 50px;
-    line-height:50px;
-    text-align: center;
-    width: 100vw;
-}
-
 .todos__add {
     display: flex;
     justify-content: space-between;
-    margin: 0 35px;
+    padding: 0 30px;
+    margin-bottom: 10px;
 }
 
 .todos__add-btn {
     border:none;
     border-radius: 50%;
     background-color: cadetblue;
+}
+
+.footer{
+    background-color: thistle;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
