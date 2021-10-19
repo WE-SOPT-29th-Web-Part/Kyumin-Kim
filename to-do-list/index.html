@@ -6,63 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src = "main.js"></script>
 </head>
 <body>
-    <!-- html 마크업 -->
     <header class = "header">
-        <h1 class = "header__logo">To Do List</h1></header>
+        <h1 class = "header__logo">요란도란 Web To Do List</h1></header>
     <nav class = "options">
         <button class = "options__btn options__today">오늘만 보기</button>
         <button class = "options__btn options__tommorow">내일만 보기</button>
         <button class = "options__btn options__both">함께 보기</button>
     </nav>
     <main class = "todos">
-        <section class = "todos__today">
+        <section class = "todos__today open">
             <h2 class = "todos__header">오늘 할 일</h2>
             <ul class = "todos__items">
-                <li class = "todos__item">
-                    <span class = "todos__name">HTML 공부</span>
-                    <button class = "todos__delete">X</button>
-                </li>
-                <li class = "todos__item">
-                    <span class = "todos__name">CSS 공부</span>
-                    <button class = "todos__delete">X</button>
-                </li>
-                <li class = "todos__item">
-                    <span class = "todos__name">팟장님 최고</span>
-                    <button class = "todos__delete">X</button>
-                </li>
             </ul>
             <div class = "todos__add">
-                <input class = "todos__add-input" type="text"  />
+                <input class = "todos__add-input" type="text" />
                 <button class = "todos__add-btn">+</button>
             </div>
         </section>
-        <section class = "todos__today">
+        <section class = "todos__tommorow open">
             <h2 class = "todos__header">내일 할 일</h2>
             <ul class = "todos__items">
-                <li class = "todos__item">
-                    <span class = "todos__name">JS 공부</span>
-                    <button class = "todos__delete">X</button>
-                </li>
-                <li class = "todos__item">
-                    <span class = "todos__name">React 공부</span>
-                    <button class = "todos__delete">X</button>
-                </li>
-                <li class = "todos__item">
-                    <span class = "todos__name">팟장님 최고</span>
-                    <button class = "todos__delete">X</button>
-                </li>
             </ul>
             <div class = "todos__add">
-                <input class = "todos__add-input" type="text"  />
+                <input class = "todos__add-input" type="text" />
                 <button class = "todos__add-btn">+</button>
             </div>
         </section>
     </main>
-    <footer class = "footer">SOPT 29th WEB PART</footer>
-
-    <!-- div>div*5 -->
-    <!-- header.header_logo -->
+    <footer class = "footer">
+        <span>SOPT 29th WEB PART</span>
+    </footer>
 </body>
 </html>
