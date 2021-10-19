@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     height:100%;
@@ -6,6 +7,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
+=======
+@import "css/reset.css";
+
+>>>>>>> ef63776336adb407dee2c786f39edb3e964f81af
 .header {
     width: 100vw;
     display:flex;

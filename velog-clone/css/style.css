@@ -1,0 +1,208 @@
+@import "reset.css";
+body {
+    background-color: #F6F7F8;
+    padding:0 70px;
+}
+.main-screen {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    margin: 15px 0px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.header__btn {
+    display:flex;
+    align-items: center;
+}
+
+.header__btn-lgn {
+    margin-left: 15px;
+    border:none;
+    background-color: gray;
+    color:white;
+    border-radius: 30px;
+    padding: 7px 15px;
+    font-size: 15px;
+    font-weight:700;
+}
+
+.nav {
+    margin: 50px 0px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__sorts {
+    display:flex;
+    align-items: center;
+}
+
+.nav__sorts-trend,
+.nav__sorts-latest {
+    display:flex;
+    align-items: center;
+    margin-right: 30px;
+    padding:15px 0;
+}
+.nav__sorts-trend {
+    border-bottom: 1px solid black;
+}
+.nav__sorts-trend span {
+    font-weight: 700;
+    font-size: 18px;
+}
+.nav__sorts-trend img,
+.nav__sorts-latest img {
+    margin-right: 10px;
+}
+.nav__dates {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    padding: 0 7px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
+    position: relative;
+}
+
+.nav__dates-text {
+    font-size: 14px;
+    font-weight: 700;
+}
+.nav__date {
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
+}
+
+.nav__date div:hover {
+    background-color: #F8F9FA;
+    color:green;
+}
+
+.nav__date div {
+    width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 2px solid #F6F7F8;
+}
+
+.post {
+    width: 320px;
+    height: 380px;
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 10px 0px;
+    transition: transform 0.7s;
+}
+
+.post img {
+    width: 100%;
+}
+
+.post:hover {
+    transform: translate(0, -20px);
+}
+
+.post__title,
+.post__main,
+.post__date {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.post__title span {
+    font-weight: 700;
+}
+
+.post__main span {
+    font-size: 14px;
+}
+
+.post__date {
+    margin-top: 70px;
+}
+.post__date span {
+    font-size: 12px;
+}
+
+.post__user {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px 20px;
+}
+
+.post__user-name {
+    display:flex;
+    align-items: center;
+}
+.post__user-name img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.post__user-name span {
+    margin:0 5px;
+    font-size: 12px;
+}
+
+.post__user-name span:last-child {
+    font-weight: 700;
+}
+
+.post__user-like {
+    display: flex;
+    align-items: center;
+}
+
+.post__user-like img {
+    width: 15px;
+    height: 15px;
+}
+
+.post__user-like span {
+    font-size: 12px;
+    margin-left: 3px;
+}
+@media (max-width: 1123px) {
+
+}
+@media (max-width: 1123px) {
+    .post {
+        width: calc(50% - 10px);
+        height: 100%;
+    }
+    body {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 700px) {
+    .post {
+        width: 100%;
+        height: 100%;
+    }
+}
