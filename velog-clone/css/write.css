@@ -1,0 +1,27 @@
+#tag {
+    border:none;
+}
+
+#tag:focus {
+    outline:none;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tag__wrapper {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    height: 30px;
+    padding:0 20px;
+    background-color: green;
+    border-radius:30px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.tag__wrapper span {
+    color:white;
+}

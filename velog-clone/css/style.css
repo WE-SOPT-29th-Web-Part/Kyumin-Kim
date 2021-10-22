@@ -27,6 +27,22 @@ body {
     align-items: center;
 }
 
+.header__btn-new {
+    height:30px;
+    width: 80px;
+    margin-left:10px;
+    background-color: cadetblue;
+    border: none;
+    border-radius:10px;
+}
+
+#newtext {
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color:white;
+    font-weight: 700;
+}
+
 .header__btn-lgn {
     margin-left: 15px;
     border:none;
@@ -149,9 +165,7 @@ body {
     transform: none !important;
     box-shadow: none !important;
 }
-.post__modal {
-    transition: none;
-}
+
 .post__modal-close-btn {
     color: white;
     position:absolute;
