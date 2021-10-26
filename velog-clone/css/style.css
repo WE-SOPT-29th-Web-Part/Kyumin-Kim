@@ -27,6 +27,22 @@ body {
     align-items: center;
 }
 
+.header__btn-new {
+    height:30px;
+    width: 80px;
+    margin-left:10px;
+    background-color: cadetblue;
+    border: none;
+    border-radius:10px;
+}
+
+#newtext {
+    text-decoration-line: none;
+    text-decoration-color: none;
+    color:white;
+    font-weight: 700;
+}
+
 .header__btn-lgn {
     margin-left: 15px;
     border:none;
@@ -87,18 +103,21 @@ body {
 .nav__date {
     position: absolute;
     right: 0px;
-    top: 100%;
+    top: 100%; 
+    /* 부모의 높이만큼 내려와서 시작하게 됨 */
     margin-top: 10px;
     background-color: white;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px 0px;
+    z-index:2;
+    visibility:hidden;
 }
 
-.nav__date div:hover {
+.nav__date-list:hover {
     background-color: #F8F9FA;
     color:green;
 }
 
-.nav__date div {
+.nav__date-list {
     width: 180px;
     height: 40px;
     display: flex;
@@ -107,6 +126,10 @@ body {
     font-size: 14px;
     font-weight: 700;
     border-bottom: 2px solid #F6F7F8;
+}
+
+.nav__date-list.active {
+    color:red;
 }
 
 .post {
@@ -126,6 +149,39 @@ body {
     transform: translate(0, -20px);
 }
 
+.post__modal-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.5);
+}
+.post__modal:hover{
+    /* 애니메이션 없애기 */
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.post__modal-close-btn {
+    color: white;
+    position:absolute;
+    bottom: 0px;
+    right: 50%;
+    transform: translate(50%, -500%);
+    background-color: #FA7DA8;
+    
+    /* 중앙위치 */
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border:none;
+    border-radius: 50%;
+}
 .post__title,
 .post__main,
 .post__date {
