@@ -1,0 +1,23 @@
+@import "reset-css";
+
+
+:root {
+  --blue: #C6DBE8;
+  --purple: #C7CAF7;
+}
+body {
+  margin: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height:100%;
+}
+ 
+#root {
+  background-color: var(--purple);
+}
+
+* {
+  box-sizing:border-box;
+}
