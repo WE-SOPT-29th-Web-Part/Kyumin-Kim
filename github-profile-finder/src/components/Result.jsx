@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Result = ({userInfo, setUserInfo}) => {
-    return userInfo.avatar_url ? (
+    return (
         <Root>
             <button onClick={() => setUserInfo({})}>close</button>
             <img src={userInfo.avatar_url} alt="" />
             <h3>{userInfo.name}</h3>
             <h4>{userInfo.login}</h4>
             <p>{userInfo.bio}</p>
-            <a href={userInfo.html_url} target="_blank">Visit Github</a>
+            <a href={userInfo.html_url} target="_blank" rel="noreferrer">Visit Github</a>
             <Ul>
                 <li>
                     <strong>Followers</strong>
@@ -25,10 +25,8 @@ const Result = ({userInfo, setUserInfo}) => {
                 </li>
             </Ul>
         </Root>
-    ) : (
-    <></>
     );
-}
+};
 
 export default Result;
 

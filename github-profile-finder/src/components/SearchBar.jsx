@@ -11,10 +11,17 @@ const SearchBar = ({setUserInfo}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setUserInfo((currentUserInfo) => ({...currentUserInfo, status:"pending"}))
+
+        try {
         const { data } = await axios.get(`http://api.github.com/users/${user}`);
-        setUserInfo(data);
+        setUserInfo((currentUserInfo) => ({...currentUserInfo, data:data, status:"resolved"}));
+        } catch (error) {
+            setUserInfo((currentUserInfo) => ({...currentUserInfo, data:null, status:"rejected"}));
+            console.log(error);
+        }
         setUser("");
-    };
+    }; 
 
     return (
         <form onSubmit={handleSubmit}>
