@@ -1,30 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Navigation = ({date,setDate}) => {
-    const showToday = () => {
-        setDate(() => ({
-            status:"today",
-        }));
-    }
-
-    const showTomorrow = () => {
-        setDate(() => ({
-            status:"tomorrow",
-        }));
-    }
-    
-    const showBoth = () => {
-        setDate(() => ({
-            status:"both",
-        }));
-    }
-
+const Navigation = () => {
     return (
         <Root>
-            <button onClick={showToday}>오늘만 보기</button>
-            <button onClick={showTomorrow}>내일만 보기</button>
-            <button onClick={showBoth}>모두 보기</button>
+            <button>오늘만 보기</button>
+            <button>내일만 보기</button>
+            <button>모두 보기</button>
         </Root>
     )
 }
