@@ -1,9 +1,10 @@
 import Result from './Result';
 
 const Todolist = () => {
+
     return (
         <div>
-        <Result className="todo_today" />
+        <Result />
         </div>
     )
 }
