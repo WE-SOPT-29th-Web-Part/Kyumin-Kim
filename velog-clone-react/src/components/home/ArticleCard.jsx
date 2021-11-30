@@ -3,7 +3,7 @@ import React from "react";
 const ArticleCard = ({ article }) => {
   console.log("article", article);
 
-  const { id, title, body, summary, series, tags, thumbnail, date } = article;
+  const { title, summary, tags, thumbnail, date } = article;
   return (
     <div>
       <img src={thumbnail} alt="" />

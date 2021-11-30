@@ -64,7 +64,7 @@ const Write = () => {
       />
       <ArticleTags
         tags={articleData.tags}
-        // articleData={articleData}
+        articleData={articleData}
         setArticleData={setArticleData}
         // onArrDataChange={handleArrDataChange}
         // onArrDataRemove={handleArrDataRemove}
