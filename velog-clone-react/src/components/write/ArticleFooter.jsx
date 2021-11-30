@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const ArticleFooter = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  // const navigate = useNavigate();
+  return <div></div>;
+};
 
-export default ArticleFooter
+export default ArticleFooter;
