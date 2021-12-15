@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const ArticleTitle = ({ setArticleData }) => {
   const handleChange = (e) => {
@@ -8,11 +9,17 @@ const ArticleTitle = ({ setArticleData }) => {
     }));
   };
   return (
-    <textarea
+    <StyledRoot
       placeholder="제목을 입력해주세요."
       onChange={handleChange}
-    ></textarea>
+    ></StyledRoot>
   );
 };
 
 export default ArticleTitle;
+
+const StyledRoot = styled.input`
+  outline: none;
+  border: none;
+  font-size: 40px;
+`;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import ArticleBody from "../components/write/ArticleBody";
 import ArticleFooter from "../components/write/ArticleFooter";
 import ArticleTags from "../components/write/ArticleTags";
@@ -56,27 +57,50 @@ const Write = () => {
   // };
 
   return (
-    <div>
-      <button onClick={handlePost}>POST</button>
-      <ArticleTitle
-        setArticleData={setArticleData}
-        // onDataChange={handleDataChange}
-      />
-      <ArticleTags
-        tags={articleData.tags}
-        articleData={articleData}
-        setArticleData={setArticleData}
-        // onArrDataChange={handleArrDataChange}
-        // onArrDataRemove={handleArrDataRemove}
-        // onDataChange={handleDataChange}
-      />
-      <ArticleBody
-        setArticleData={setArticleData}
-        // onDataChange={handleDataChange}
-      />
-      <ArticleFooter />
-    </div>
+    <StyledRoot>
+      <StyledWrapper>
+        <ArticleTitle
+          setArticleData={setArticleData}
+          // onDataChange={handleDataChange}
+        />
+        <StyledMidLine />
+        <ArticleTags
+          tags={articleData.tags}
+          articleData={articleData}
+          setArticleData={setArticleData}
+          // onArrDataChange={handleArrDataChange}
+          // onArrDataRemove={handleArrDataRemove}
+          // onDataChange={handleDataChange}
+        />
+
+        <ArticleBody
+          setArticleData={setArticleData}
+          // onDataChange={handleDataChange}
+        />
+        <div>
+          <button onClick={handlePost}>출간하기</button>
+        </div>
+      </StyledWrapper>
+    </StyledRoot>
   );
 };
 
 export default Write;
+
+const StyledRoot = styled.div`
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  height: 100%;
+`;
+
+const StyledWrapper = styled.div`
+  padding: 32px 48px 0 48px;
+`;
+
+const StyledMidLine = styled.div`
+  width: 64px;
+  height: 6px;
+  background-color: black;
+  margin: 24px 0;
+`;

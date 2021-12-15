@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { ReactComponent as ArrowDropDownImage } from "../../asset/icons/arrow_drop_down.svg";
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
           <StyledLink to="/write">
             <button>새 글 작성</button>
           </StyledLink>
+          <ArrowDropDownImage fill="darkgray" />
         </StyledRight>
       </div>
     </StyledWrapper>
@@ -52,7 +54,14 @@ const StyledLeft = styled.div`
     margin-right: 1rem;
   }
 `;
-const StyledRight = styled.div``;
+const StyledRight = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > svg:hover {
+    fill: red;
+  }
+`;
 const StyledLink = styled(Link)`
   & > button {
     background-color: white;

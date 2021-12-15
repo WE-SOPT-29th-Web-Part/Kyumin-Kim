@@ -4,12 +4,13 @@ import styled from "styled-components";
 const ArticleCard = ({ article }) => {
   console.log("article", article);
 
-  const { title, summary, tags, thumbnail, date } = article;
+  const { title, summary, tags, thumbnail, date, body } = article;
   return (
     <StyledWrapper>
       <div>
         <img src={thumbnail} alt="" />
         <h3>{title}</h3>
+        <h4>{body}</h4>
         <h4>{summary}</h4>
         <Tags>
           {tags.map((tag) => (
