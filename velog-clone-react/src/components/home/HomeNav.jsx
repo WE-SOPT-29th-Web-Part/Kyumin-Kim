@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const HomeNav = () => {
+const HomeNav = ({}) => {
   return (
     <StyledWrapper>
       <div>
@@ -46,7 +46,7 @@ const StyledLink = styled(Link)`
     text-align: center;
     padding: 1rem 0;
   }
-  & > div:hover {
+  &:focus-within div {
     color: green;
     border-bottom: 0.1rem solid green;
   }
