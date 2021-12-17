@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ArticleBody from "../components/write/ArticleBody";
@@ -13,6 +13,11 @@ const Write = () => {
   const article = location.state;
   console.log(article);
   // const [isPublishScreen, setIsPublishScreen] = useState(false);
+  const [files, setFiles] = useState("");
+  useEffect(() => {
+    preview();
+    return () => preview();
+  });
   const [articleData, setArticleData] = useState(
     article ?? {
       title: "",
@@ -56,14 +61,30 @@ const Write = () => {
   };
 
   const handleImageChange = async (e) => {
-    console.log(e.target.files[0]);
     const formData = new FormData();
     const imageFile = e.target.files[0];
+    console.log(imageFile);
     formData.append("file", imageFile);
     const imageResponse = await imageClient.post("", formData);
     console.log(imageResponse);
     const imageUrl = imageResponse.data.url;
     handleDataChange("thumbnail", imageUrl);
+
+    const file = e.target.files;
+    setFiles(file);
+  };
+
+  const preview = () => {
+    if (!files) return false;
+
+    const imgEl = document.querySelector(".img_box");
+
+    const reader = new FileReader();
+
+    reader.onload = () =>
+      (imgEl.style.backgroundImage = `url(${reader.result})`);
+    reader.readAsDataURL(files[0]);
+    console.log(reader);
   };
   return (
     <StyledRoot>
@@ -90,7 +111,9 @@ const Write = () => {
         {/* <ArticleFooter /> */}
         <StyledPublish>
           <input type="file" onChange={handleImageChange}></input>
+
           <button onClick={handlePost}>출간하기</button>
+          <div className="img_box"></div>
         </StyledPublish>
       </StyledWrapper>
     </StyledRoot>
@@ -117,4 +140,9 @@ const StyledMidLine = styled.div`
   margin: 24px 0;
 `;
 
-const StyledPublish = styled.div``;
+const StyledPublish = styled.div`
+  .img_box {
+    width: auto;
+    height: 300px;
+  }
+`;
