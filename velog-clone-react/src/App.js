@@ -1,18 +1,20 @@
-import './App.css';
-import { BrowserRouter,Route, Link, Routes } from "react-router-dom";
-import Home from './pages/Home';
-import Write from './pages/Write';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Write from "./pages/Write";
+import Article from "./pages/Article";
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="write/*" element={<Write/>} />
-        <Route component={() => <div>Page Not Found</div>} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/write" element={<Write />} />
+          <Route path="/article/:id" element={<Article />} />
+          <Route path="/article/edit/:id" element={<Write />} />
+          <Route path="/*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
