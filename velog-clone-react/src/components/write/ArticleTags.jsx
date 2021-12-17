@@ -1,21 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-const ArticleTags = ({ tags, articleData, setArticleData }) => {
+const ArticleTags = ({
+  tags,
+  articleData,
+  onArrDataChange,
+  onArrDataRemove,
+}) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      const tempData = { ...articleData };
-
-      tempData.tags = [...tempData.tags, e.target.value];
-      setArticleData(tempData);
+      onArrDataChange("tags", e.target.value);
       e.target.value = "";
     }
   };
   return (
     <StyledRoot>
-      {tags.map((tag) => (
-        <div key={tag}>{tag}</div>
+      {tags.map((tag, idx) => (
+        <div key={idx} onClick={(e) => onArrDataRemove("tags", tag)}>
+          {tag}
+        </div>
       ))}
+
       <input
         type="text"
         onKeyPress={handleKeyPress}
@@ -33,9 +38,10 @@ const StyledRoot = styled.div`
     font-size: 20px;
     color: green;
     background-color: #f1f3f5;
-    border-radius: 35%;
+    border-radius: 15px;
     padding: 5px 10px 5px 10px;
     margin-right: 10px;
+    margin-bottom: 2px;
   }
   & > input {
     outline: none;

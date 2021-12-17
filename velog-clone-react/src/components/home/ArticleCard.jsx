@@ -1,17 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ImagWrapper from "../common/ImagWrapper";
 
 const ArticleCard = ({ article }) => {
   console.log("article", article);
 
-  const { title, summary, tags, thumbnail, date, body } = article;
+  const { title, tags, thumbnail, date, body } = article;
   return (
     <StyledWrapper>
       <div>
-        <img src={thumbnail} alt="" />
-        <h3>{title}</h3>
+        <Link to={`article/${article.id}`} state={article}>
+          {thumbnail && (
+            <ImagWrapper ratio="56%">
+              <img src={thumbnail} alt="" />
+            </ImagWrapper>
+          )}
+          <h3>{title}</h3>
+        </Link>
+
         <h4>{body}</h4>
-        <h4>{summary}</h4>
         <Tags>
           {tags.map((tag) => (
             <div key={tag}>{tag}</div>

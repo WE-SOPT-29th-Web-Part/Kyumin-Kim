@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const ArticleTitle = ({ setArticleData }) => {
-  const handleChange = (e) => {
-    setArticleData((articleData) => ({
-      ...articleData, // 각각의 프로퍼티를 스프레드 연산자로 풀어줌.
-      title: e.target.value,
-    }));
-  };
+const ArticleTitle = ({ onDataChange, title }) => {
+  // const handleChange = (e) => {
+  //   setArticleData((articleData) => ({
+  //     ...articleData, // 각각의 프로퍼티를 스프레드 연산자로 풀어줌.
+  //     title: e.target.value,
+  //   }));
+  // };
   return (
     <StyledRoot
+      value={title}
       placeholder="제목을 입력해주세요."
-      onChange={handleChange}
+      onChange={(e) => onDataChange("title", e.target.value)}
     ></StyledRoot>
   );
 };

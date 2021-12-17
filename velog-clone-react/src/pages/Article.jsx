@@ -1,7 +1,51 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
+import ArticleOptions from "../components/article/ArticleOptions";
+import Header from "../components/common/Header";
+import ImagWrapper from "../components/common/ImagWrapper";
+import Profile from "../components/home/Profile";
 
 const Article = () => {
-  return <div></div>;
+  const location = useLocation();
+  const article = location.state;
+  const { title, body, thumbnail, date, tags } = article;
+  return (
+    <div>
+      <Header />
+      <h1>{title}</h1>
+      <ArticleOptions article={article} />
+      <div>
+        <span>김규민</span>
+        <span>{date}</span>
+      </div>
+      <StyledTag>
+        {tags.map((tag, idx) => (
+          <span key={idx}>{tag}</span>
+        ))}
+      </StyledTag>
+      {thumbnail && (
+        <ImagWrapper ratio="50%">
+          <img src={thumbnail} alt="thumbnail" />
+        </ImagWrapper>
+      )}
+      <div>{body}</div>
+      <Profile />
+    </div>
+  );
 };
 
 export default Article;
+
+const StyledTag = styled.div`
+  display: flex;
+  & > span {
+    font-size: 20px;
+    color: green;
+    background-color: #f1f3f5;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
+`;
