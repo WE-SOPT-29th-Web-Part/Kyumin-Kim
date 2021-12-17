@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as ArrowDropDownImage } from "../../asset/icons/arrow_drop_down.svg";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleMoveHome = () => {
+    navigate("/");
+  };
   return (
     <StyledWrapper>
       <div>
-        <StyledLeft>
+        <StyledLeft onClick={handleMoveHome}>
           <div>v</div>
           <div>q-min-sopt.log</div>
         </StyledLeft>

@@ -34,6 +34,7 @@ export default ArticleTags;
 
 const StyledRoot = styled.div`
   display: flex;
+  flex-wrap: wrap;
   & > div {
     font-size: 20px;
     color: green;

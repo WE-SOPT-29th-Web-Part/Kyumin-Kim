@@ -68,7 +68,10 @@ const Write = () => {
   return (
     <StyledRoot>
       <StyledWrapper>
-        <ArticleTitle title={article.title} onDataChange={handleDataChange} />
+        <ArticleTitle
+          title={articleData.title}
+          onDataChange={handleDataChange}
+        />
         <StyledMidLine />
         <ArticleTags
           tags={articleData.tags}
@@ -81,7 +84,7 @@ const Write = () => {
 
         <ArticleBody
           // setArticleData={setArticleData}
-          body={article.body}
+          body={articleData.body}
           onDataChange={handleDataChange}
         />
         {/* <ArticleFooter /> */}

@@ -52,6 +52,7 @@ const StyledWrapper = styled.div`
 
 const Tags = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
 
   & > div {
@@ -60,5 +61,6 @@ const Tags = styled.div`
     background-color: #f8f9fa;
     color: green;
     margin-right: 1rem;
+    margin-bottom: 0.5rem;
   }
 `;
