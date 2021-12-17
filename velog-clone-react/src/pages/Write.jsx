@@ -16,7 +16,6 @@ const Write = () => {
   const [files, setFiles] = useState("");
   useEffect(() => {
     preview();
-    return () => preview();
   });
   const [articleData, setArticleData] = useState(
     article ?? {
@@ -70,15 +69,14 @@ const Write = () => {
     const imageUrl = imageResponse.data.url;
     handleDataChange("thumbnail", imageUrl);
 
-    const file = e.target.files;
-    setFiles(file);
+    const files = e.target.files;
+    setFiles(files);
   };
 
   const preview = () => {
     if (!files) return false;
 
     const imgEl = document.querySelector(".img_box");
-
     const reader = new FileReader();
 
     reader.onload = () =>
@@ -111,7 +109,6 @@ const Write = () => {
         {/* <ArticleFooter /> */}
         <StyledPublish>
           <input type="file" onChange={handleImageChange}></input>
-
           <button onClick={handlePost}>출간하기</button>
           <div className="img_box"></div>
         </StyledPublish>
